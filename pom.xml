@@ -6,7 +6,7 @@
 
   <groupId>org.folio</groupId>
   <artifactId>folio-application-generator</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>kevin</version>
   <packaging>maven-plugin</packaging>
   <name>folio-application-generator</name>
   <description>Folio application descriptor generator</description>
@@ -17,7 +17,6 @@
     <maven.compiler.target>17</maven.compiler.target>
     <maven-plugin-tools.version>3.11.0</maven-plugin-tools.version>
     <maven-plugin-api.version>3.9.6</maven-plugin-api.version>
-    <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
     <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
 
     <semver4j.version>5.2.2</semver4j.version>
@@ -33,7 +32,8 @@
     <jackson-databind.version>2.17.0</jackson-databind.version>
     <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <mockito-junit-jupiter.version>5.11.0</mockito-junit-jupiter.version>
-    <spring-context.version>6.1.5</spring-context.version>
+    <spring-boot.version>3.3.9</spring-boot.version>
+    <spring-context.version>6.1.17</spring-context.version>
     <aws-sdk.version>2.25.11</aws-sdk.version>
     <testcontainers.version>1.19.7</testcontainers.version>
     <slf4j.version>2.0.12</slf4j.version>
@@ -78,6 +78,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>${spring-context.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <version>${spring-boot.version}</version>
     </dependency>
 
     <dependency>
@@ -194,7 +200,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${maven-surefire-plugin.version}</version>
         <configuration>
           <useSystemClassLoader>false</useSystemClassLoader>
           <groups>unit</groups>
